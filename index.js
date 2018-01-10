@@ -7,4 +7,4 @@ const app = document.getElementById('app');
 // ReactDOM.render(holaMundo,app);
 //console.log('hola mundo!');
 
-render(<Media/>,app);
+render(<Media title="Como comprar bitcoins?" author="GuidoChirinos" image="./images/covers/bitcoin.jpg"/>,app);

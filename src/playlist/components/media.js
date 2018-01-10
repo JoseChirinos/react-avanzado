@@ -1,32 +1,25 @@
 import React, { Component } from 'react';
 import './media.css';
 
+/*
+ * 		Añadimos props
+ */
 class Media extends Component{
-
 	render(){
-		const styles = {
-			container:{
-				color:'#44546b',
-				cursor:'pointer',
-				width:260,
-				border: '1px solid red'
-			}
-		}
-		/* o tambien puedes aplicar styles inline
-			<div style={styles.container}>
-		*/
+		const { title, author, image } = this.props;
+		console.log(this.props);
 		return(
 			<div className="Media">
 				<div className="Media-cover">
 					<img
 						className="Media-image"
-						src="./images/covers/bitcoin.jpg"
+						src={ image }
 						alt=""
 						width={260}
 						height={160}
 					/>
-					<h3 className="Media-title">¿Por qué aprender React?</h3>
-					<p className="Media-author">JoseChirinos</p>
+					<h3 className="Media-title">{ title }</h3>
+					<p className="Media-author">{ author }</p>
 				</div>
 			</div>
 		)
