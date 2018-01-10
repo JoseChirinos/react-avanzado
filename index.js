@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM, { render } from 'react-dom';
 import Media from './src/playlist/components/media';
+import data from './src/api.json';
 
 const app = document.getElementById('app');
 //const holaMundo = <h1>Hola Mundo!</h1>;

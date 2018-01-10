@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './media.css';
 
 /*
- * 		Añadimos States para poder modificar dinamicamente los datos
+ * 		Estados del componente
  */
 
 class Media extends Component{
