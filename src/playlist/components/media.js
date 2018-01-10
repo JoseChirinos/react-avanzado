@@ -3,25 +3,31 @@ import PropTypes from 'prop-types';
 import './media.css';
 
 /*
- * 		Añadimos Eventos
+ * 		Añadimos States para poder modificar dinamicamente los datos
  */
 
 class Media extends Component{
-	/* el constructor es con es6
+	/* con es2017 */
+	state = {
+		author: this.props.author
+	}
+	/* con es2016
 	constructor(props){
 		super(props);
-		this.handleClick = this.handleClick.bind(this);
-	}
-	handleClick(event){
-		console.log(this.props.title);
+		this.state = {
+			author: props.author
+		}
 	}
 	*/
-	/* con es2017, se puede heredar con un arrow function gracias a stage2>(en el webpack) */
 	handleClick = (event) => {
-		console.log(this.props.title);
+		this.setState({
+			author: 'Gary Guzman'
+		});
 	}
 	render(){
-		const { type, title, author, image } = this.props;
+		const { type, title, image } = this.props;
+		const { author } = this.state;
+
 		console.log(this.props);
 		return(
 			<div className="Media" onClick={this.handleClick}>
