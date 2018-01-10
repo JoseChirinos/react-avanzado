@@ -1,31 +1,20 @@
+// Dependences
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+// Styles
 import './media.css';
 
-/*
- * 		Estados del componente
- */
-
 class Media extends Component{
-	/* con es2017 */
 	state = {
 		author: this.props.author
 	}
-	/* con es2016
-	constructor(props){
-		super(props);
-		this.state = {
-			author: props.author
-		}
-	}
-	*/
 	handleClick = (event) => {
 		this.setState({
 			author: 'Gary Guzman'
 		});
 	}
 	render(){
-		const { type, title, image } = this.props;
+		const { type, title, cover } = this.props;
 		const { author } = this.state;
 
 		console.log(this.props);
@@ -34,7 +23,7 @@ class Media extends Component{
 				<div className="Media-cover">
 					<img
 						className="Media-image"
-						src={ image }
+						src={ cover }
 						alt=""
 						width={260}
 						height={160}
@@ -48,7 +37,7 @@ class Media extends Component{
 }
 
 Media.propTypes = {
-	image: PropTypes.string,
+	cover: PropTypes.string,
 	title: PropTypes.string.isRequired,
 	author: PropTypes.string, // number,object,func,array
 	type: PropTypes.oneOf(['video','audio'])

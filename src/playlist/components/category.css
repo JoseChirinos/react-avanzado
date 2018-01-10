@@ -1,0 +1,12 @@
+.Category{
+    padding-top: 45px;
+}
+.Category-description{
+	color: #a7a7a7;
+    margin: 0;
+}
+.Category-title{
+	color: #44546b;
+    font-weight: 100;
+    margin: 6px 0;
+}
