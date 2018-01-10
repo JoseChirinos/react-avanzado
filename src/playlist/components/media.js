@@ -12,6 +12,9 @@ class Media extends Component{
 				border: '1px solid red'
 			}
 		}
+		/* o tambien puedes aplicar styles inline
+			<div style={styles.container}>
+		*/
 		return(
 			<div className="Media">
 				<div className="Media-cover">
