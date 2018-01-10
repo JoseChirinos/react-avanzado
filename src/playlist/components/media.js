@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './media.css';
 
+/*
+ * 		Añadimos PropTypes para validad el tipo de datos de entrada
+ */
+
 class Media extends Component{
 	render(){
 		const { type, title, author, image } = this.props;
