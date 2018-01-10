@@ -3,15 +3,28 @@ import PropTypes from 'prop-types';
 import './media.css';
 
 /*
- * 		Añadimos PropTypes para validad el tipo de datos de entrada
+ * 		Añadimos Eventos
  */
 
 class Media extends Component{
+	/* el constructor es con es6
+	constructor(props){
+		super(props);
+		this.handleClick = this.handleClick.bind(this);
+	}
+	handleClick(event){
+		console.log(this.props.title);
+	}
+	*/
+	/* con es2017, se puede heredar con un arrow function gracias a stage2>(en el webpack) */
+	handleClick = (event) => {
+		console.log(this.props.title);
+	}
 	render(){
 		const { type, title, author, image } = this.props;
 		console.log(this.props);
 		return(
-			<div className="Media">
+			<div className="Media" onClick={this.handleClick}>
 				<div className="Media-cover">
 					<img
 						className="Media-image"
