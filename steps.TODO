@@ -1,0 +1,12 @@
+comentar:
+  - ctrol + /
+
+completar tag:
+  - alt + >
+
+clase 11:
+  - instalar nuevas dependencias
+    > npm install prop-types --save
+  - para ver mas sobre los prop-types
+    > https://reactjs.org/docs/typechecking-with-proptypes.html <link:doc_prop_types>
+    

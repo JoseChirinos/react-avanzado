@@ -7,4 +7,4 @@ const app = document.getElementById('app');
 // ReactDOM.render(holaMundo,app);
 //console.log('hola mundo!');
 
-render(<Media/>,app);
+render(<Media type="video" title="¿Qué es Responsive Design?" author="JoseChirinos" image="./images/covers/responsive.jpg"/>,app);
