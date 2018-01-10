@@ -25,7 +25,7 @@ class Media extends Component{
 		});
 	}
 	render(){
-		const { type, title, image } = this.props;
+		const { type, title, cover } = this.props;
 		const { author } = this.state;
 
 		console.log(this.props);
@@ -34,7 +34,7 @@ class Media extends Component{
 				<div className="Media-cover">
 					<img
 						className="Media-image"
-						src={ image }
+						src={ cover }
 						alt=""
 						width={260}
 						height={160}
@@ -48,7 +48,7 @@ class Media extends Component{
 }
 
 Media.propTypes = {
-	image: PropTypes.string,
+	cover: PropTypes.string,
 	title: PropTypes.string.isRequired,
 	author: PropTypes.string, // number,object,func,array
 	type: PropTypes.oneOf(['video','audio'])
