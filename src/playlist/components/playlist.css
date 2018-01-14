@@ -4,3 +4,6 @@
 	overflow-y: hidden;
 	padding-bottom: 80px;
 }
+.Controls{
+	display: block;
+}
