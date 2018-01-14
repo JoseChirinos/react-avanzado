@@ -1,24 +1,15 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import './media.css';
 
 /*
- * 		Estados del componente
+ * 		PureComponent: shouldComponentUpdate automatico
  */
 
-class Media extends Component{
-	/* con es2017 */
+class Media extends PureComponent{
 	state = {
 		author: this.props.author
 	}
-	/* con es2016
-	constructor(props){
-		super(props);
-		this.state = {
-			author: props.author
-		}
-	}
-	*/
 	handleClick = (event) => {
 		this.setState({
 			author: 'Gary Guzman'
