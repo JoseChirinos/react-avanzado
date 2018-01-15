@@ -113,3 +113,47 @@ Components SMART AND DUMB (Inteligentes y Tontos):
       - Normalmente tienen estado
       - Llaman acciones
       - Generados por higher order components
+
+Clase 20:
+  ☐ Estructura del proyecto: Platzi Music
+
+    **home**
+    - entry point para webpack
+
+    ☐ Home - página / (container|smart)
+
+    -> PlatziMovie
+      <Layout:UI>
+      -> Related - UI
+        - <Tarea:ParaJose>
+      -> Categories - UI
+        - **Category - UI**
+          - **PlayList - UI**
+            - **Media - UI** / Pure
+
+      -> Search / (container|smart)
+          <SearchLayout:UI>
+           - **Input - UI**
+
+      -> Modal - (container|smart)
+          <Layout:UI>
+            - VideoPlayer - (container|smart)
+            -> Layout
+              - Video - UI
+              - Spinner - UI
+              - Controls - UI
+                - PlayPause - UI
+                  - PlayIcon - UI
+                  - PauseIcon - UI
+                - Timer - UI
+                - ProgressBar - UI
+                - Volume - UI
+                  - VolumenIcon - UI
+                - FullScreen - UI
+                  - FullScreenIcon - UI
+
+ Carpetas Pages:
+       ☐ Components
+         - aqui no se jeje
+       ☐ Containers
+         - Componentes inteligentes
