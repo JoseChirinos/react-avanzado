@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import HomeLayout from '../components/home-layout';
+import Categories from '../../categories/components/categories';
 class Home extends Component {
 	render(){
 		return (
 			<HomeLayout>
-				<h1>Hola Mundo React</h1> 
+				<Categories categories={ this.props.data.categories } />
 			</HomeLayout>
 		);
 	}
