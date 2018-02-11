@@ -21,6 +21,7 @@ function PlayList(props){
 					return <Media
 								{...item}
 								key = {item.id}
+								handleOpen = { props.handleOpen }
 							/>
 				})
 			}
