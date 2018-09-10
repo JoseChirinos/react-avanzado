@@ -1,0 +1,159 @@
+comentar:
+  - ctrol + /
+
+completar tag:
+  - alt + > (tener activado Javascript Babel)
+
+clase 11:
+  - instalar nuevas dependencias
+    > npm install prop-types --save
+  - para ver mas sobre los prop-types
+    > https://reactjs.org/docs/typechecking-with-proptypes.html <link:doc_prop_types>
+
+clase 15:
+  Ciclo de vida de los componentes de React:
+
+  Montado:
+    El momento en que el componente entra en escena.
+
+  ☐ Constructor: método llamado antes de que el componente sea montado (componente aun no se ve).
+    - Podemos iniciar el estado
+    - Enlazar eventos (bind).
+    - Es el primer metodo que se llama al instanciar un componente.
+
+  ☐ componentWillMount: método llamado inmediatamente antes de que el componente se vaya a montar (componente aun no se ve).
+    - Podemos hacer un setState()
+    - No hacer llamados a un API o suscripción a eventos.
+
+  ☐ Render: método que contiene todos los elementos a renderizar (estructura del componente).
+    - Contiene JSX en el return.
+    - Puedes calcular propiedades nCompleto = name + lastName.
+
+  ☐ componentDidMount: Método llamado luego de montarse el componente (el componente ya esta en la pantalla).
+    - Solo se lanza una vez.
+    - Enlazar (bind) de eventos.
+    - Es el primer método que se llama al instanciar un componente.
+    - Aqui podemos utilizar APIs (Navegador o Datos Externos).
+  
+  Actualización:
+  ☐ componentWillReceiveProps: método llamado al recibir nuevas propiedades que sirve para actualizar el estado con base a las nuevas propiedades.
+
+  ☐ shouldComponentUpdate: método que condiciona si el componente se debe volver a renderizar, es utilizado para optimizar el rendimiento.
+
+  ☐ componentWillUpdate: método llamado antes de re-renderizar un componente, es utilizado para optimizar el rendimiento.
+  ☐ Render: método que realiza el re-render.
+  ☐ componentDidUpdate: método llamado luego del re-render.
+  
+  Desmontado:
+  ☐ componentWillUnmount: método llamado antes de que el componente sea retirado de la aplicación.
+    - Manejo de Errores
+    - componentDidCatch: método llamado cuando ocurre un error al renderizar el componente, el manejo de errores solamente ocurre en componentes hijos.
+
+  Code:
+  classMiComponenteextendsComponents{
+
+    constructor(){
+      // Enlazo (bind) eventos y/o inicializo estado
+    }
+    componentWillMount(){
+      // Se ejecuta antes de montar el componente
+      // Se podría usar para hacer un setState()
+    }
+    render(){
+      // Contiene todos los elementos a renderizar
+      // podrías usarlo para calcular propiedades (ej: concatenar una cadena)
+    }
+    componentDidMount(){
+      //Solo se lanza una vez
+      //Ideal para llamar a una API, hacer un setInteval, etc
+    }
+
+    //Actualización:
+    componentWillReceiveProps(){
+      //Es llamado cuando el componente recibe nuevas propiedades.
+    }
+    shouldComponentUpdate(){
+      //Ideal para poner una condición y  si las propiedades que le llegaron anteriormente
+      // eran las mismas que tenia retornar false para evitar re-renderear el componente
+    }
+    componentWillUpdate(){
+      //metodo llamado antes de re-renderizar el componente si shouldComponentUpdate devolvió true
+    }
+
+    // re-render si es necesario...
+
+    componentDidUpdate(){
+      //Método llamado luego del re-render
+    }
+    componentWillUnmount(){
+      //Método llamado antes de desmontar el componente
+    }
+    componentDidCatch(){
+      // Si ocurre algún error, lo capturo desde acá:
+    }
+  }
+
+Components SMART AND DUMB (Inteligentes y Tontos):
+  
+    ☐ Presentacional (Cómo se ve)
+      - Puede contener smart components u otros componentes de UI
+      - Permiten composición con `[props.children]``
+      - No depeden del resto de la aplicación
+      - No especifica cómo los datos son cargados o mutados
+      - Recibe datos y callbacks solo con propiedades
+      - Rara vez tienen su propio estado
+      - Están escritos como componentes funcionales a menos que necesiten mejoras de performance. Sólo pueden ser Componentes funcionales o Pure Components
+
+    ☐ Containers (Qué hace)
+      - Concetrado en el funcionamiento de la aplicación
+      - Contienen componentes de UI u otros containers
+      - No tienen estilos
+      - Proveen de datos a componentes de UI u otros contenedores
+      - Proveen de callbacks a la UI
+      - Normalmente tienen estado
+      - Llaman acciones
+      - Generados por higher order components
+
+Clase 20:
+  ☐ Estructura del proyecto: Platzi Music
+
+    **home**
+    - entry point para webpack
+
+    ☐ Home - página / (container|smart)
+
+    -> PlatziMovie
+      <Layout:UI>
+      -> Related - UI
+        - <Tarea:ParaJose>
+      -> Categories - UI
+        - **Category - UI**
+          - **PlayList - UI**
+            - **Media - UI** / Pure
+
+      -> Search / (container|smart)
+          <SearchLayout:UI>
+           - **Input - UI**
+
+      -> Modal - (container|smart)
+          <Layout:UI>
+            - VideoPlayer - (container|smart)
+            -> Layout
+              - Video - UI
+              - Spinner - UI
+              - Controls - UI
+                - PlayPause - UI
+                  - PlayIcon - UI
+                  - PauseIcon - UI
+                - Timer - UI
+                - ProgressBar - UI
+                - Volume - UI
+                  - VolumenIcon - UI
+                - FullScreen - UI
+                  - FullScreenIcon - UI
+
+ Carpetas Pages:
+       ☐ Components
+         - aqui no se jeje
+       ☐ Containers
+         - Componentes inteligentes
